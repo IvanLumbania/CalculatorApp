@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CalculatorApp.Calculator"
+             Title="Calculator">
+    <!--Create a black frame around the calculator and centering it in the middle of the page-->
+    <Frame BorderColor="Black"
+        HorizontalOptions="Center"
+        VerticalOptions="Center">
+        <!--Use of grid for layout-->
+        <Grid
+          RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
+          ColumnDefinitions="Auto,Auto,Auto,auto"
+          ColumnSpacing="10"
+          RowSpacing="10"
+          HorizontalOptions="Center"
+        VerticalOptions="Center">
+            <!--Result bar-->
+            <Label x:Name="result"
+                   Text="0"
+                   Grid.Row="0"
+                   Grid.ColumnSpan="5"
+                   HeightRequest="50"
+                   BackgroundColor="AliceBlue"
+                   TextColor="Black"
+                   HorizontalTextAlignment="End"
+                   VerticalTextAlignment="End"
+                   FontSize="25"
+                   ></Label>
+            <!--Button of numbers and operands-->
+            <Button Grid.Row="1"
+                    Grid.Column="0"
+                    Text="AC"
+                    HeightRequest="70"
+                    WidthRequest="70"
+                    CornerRadius="50"
+                    Clicked= "AllClear"
+                    BackgroundColor="WhiteSmoke"></Button>
+            <Button Grid.Row="1"
+                    Grid.Column="1"
+                    Text="+/-"
+                    Clicked="AdditionSubraction"
+                    HeightRequest="70"
+                    WidthRequest="70" 
+                    CornerRadius="50"
+                    BackgroundColor="WhiteSmoke"></Button>
+            <Button Grid.Row="1"
+                    Grid.Column="2"
+                    Text="%"
+                    HeightRequest="70"
+                    WidthRequest="70"
+                    CornerRadius="50"
+                    BackgroundColor="WhiteSmoke"></Button>
+            
+            <Button Grid.Row="1"
+                    Grid.Column="3"
+                    Text="/"
+                    Clicked= "Operand"
+                    HeightRequest="70"
+                    WidthRequest="70"
+                    CornerRadius="50"
+                    BackgroundColor="Orange"></Button>
+
+
+            <Button Grid.Row="2"
+                    Grid.Column="0"
+                    Text="7"
+                    HeightRequest="70"
+                    WidthRequest="70"
+                    CornerRadius="50"
+                    Clicked= "NumberClicked"
+                    BackgroundColor="DarkGray"></Button>
+            <Button Grid.Row="2"
+                    Grid.Column="1"
+                    Text="8"
+                    HeightRequest="70"
+                    WidthRequest="70"
+                    CornerRadius="50"
+                    Clicked= "NumberClicked"
+                    BackgroundColor="DarkGray"></Button>
+            <Button Grid.Row="2"
+                    Grid.Column="2"
+                    Text="9"
+                    HeightRequest="70"
+                    WidthRequest="70"
+                    CornerRadius="50"
+                    Clicked= "NumberClicked"
+                    BackgroundColor="DarkGray"></Button>
+            <Button Grid.Row="2"
+                    Grid.Column="3"
+                    Text="X"
+                    Clicked= "Operand"
+                    HeightRequest="70"
+                    WidthRequest="70"
+                    CornerRadius="50"
+                    BackgroundColor="Orange"></Button>
+
+
+            <Button Grid.Row="3"
+                    Grid.Column="0"
+                    Text="4"
+                    HeightRequest="70"
+                    WidthRequest="70"
+                    CornerRadius="50"
+                    Clicked= "NumberClicked"
+                    BackgroundColor="DarkGray"></Button>
+            <Button Grid.Row="3"
+                    Grid.Column="1"
+                    Text="5"
+                    HeightRequest="70"
+                    WidthRequest="70"
+                    CornerRadius="50"
+                    Clicked= "NumberClicked"
+                    BackgroundColor="DarkGray"></Button>
+            <Button Grid.Row="3"
+                    Grid.Column="2"
+                    Text="6"
+                    HeightRequest="70"
+                    WidthRequest="70"
+                    CornerRadius="50"
+                    Clicked= "NumberClicked"
+                    BackgroundColor="DarkGray"></Button>
+            <Button Grid.Row="3"
+                    Grid.Column="3"
+                    Text="-"
+                    HeightRequest="70"
+                    WidthRequest="70"
+                    CornerRadius="60"
+                    Clicked= "Operand"
+                    BackgroundColor="Orange"></Button>
+
+
+            <Button Grid.Row="4"
+                    Grid.Column="0"
+                    Text="1"
+                    HeightRequest="70"
+                    WidthRequest="70"
+                    CornerRadius="60"
+                    Clicked= "NumberClicked"
+                    BackgroundColor="DarkGray"></Button>
+            <Button Grid.Row="4"
+                    Grid.Column="1"
+                    Text="2"
+                    HeightRequest="70"
+                    WidthRequest="70"
+                    CornerRadius="60"
+                    Clicked= "NumberClicked"
+                    BackgroundColor="DarkGray"></Button>
+            <Button Grid.Row="4"
+                    Grid.Column="2"
+                    Text="3"
+                    HeightRequest="70"
+                    WidthRequest="70"
+                    CornerRadius="60"
+                    Clicked= "NumberClicked"
+                    BackgroundColor="DarkGray"></Button>
+            <Button Grid.Row="4"
+                    Grid.Column="3"
+                    Text="+"
+                    Clicked= "Operand"
+                    HeightRequest="70"
+                    WidthRequest="70"
+                    CornerRadius="60"
+                    BackgroundColor="Orange"></Button>
+
+            <Button Grid.Row="5"
+                    Grid.ColumnSpan="2"
+                    Text="0"
+                    HeightRequest="70"
+                    WidthRequest="160"
+                    CornerRadius="40"
+                    Clicked= "NumberClicked"
+                    BackgroundColor="DarkGray"></Button>
+            <Button Grid.Row="5"    
+                    Grid.Column="2"
+                    Text="."
+                    Clicked= "NumberClicked"
+                    HeightRequest="70"
+                    WidthRequest="70"
+                    CornerRadius="60"
+                    BackgroundColor="DarkGray"></Button>
+            <Button Grid.Row="5"
+                    Grid.Column="3"
+                    Text="="
+                    Clicked="Equal"
+                    HeightRequest="70"
+                    WidthRequest="70"
+                    CornerRadius="60"
+                    BackgroundColor="Orange"></Button>
+        </Grid>
+    </Frame>
+
+</ContentPage>
